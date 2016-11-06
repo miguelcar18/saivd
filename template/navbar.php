@@ -29,6 +29,10 @@
         <a class="pull-right" href="<?= $ruta ?>index.php"><img src="<?= $ruta ?>assets/img/logo-cpolar.png" width="140px" height="auto"></a>
         <br>
         <h3><b style="color:#FFFFFF; margin-right: 4px" class="pull-right">Cervecería Polar – Territorio Oriente Sur</b></h3>
+        <?php if(isset($_SESSION['nombre'])) { ?>
+        <br>
+        <h3><b style="color:#FFFFFF; margin-right: 4px" class="pull-right">Bienvenido <?= $_SESSION['nombre'].' '.$_SESSION['apellido'] ?></b></h3>
+        <?php } ?>
     </div>
 </nav>
 <!--/. NAV TOP  -->

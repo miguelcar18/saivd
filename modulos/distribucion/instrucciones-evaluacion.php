@@ -8,6 +8,11 @@
         </script>
         <?php 
     }
+
+    include("../../conexion/conexion-bd.php");
+    include("../../conexion/funciones.php"); 
+    
+    $consulta= $conexion->query("SELECT * FROM preguntas WHERE fkmodulo = ".$_GET['id']."");
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +27,19 @@
             <?php include('../../template/sidebar.php') ?>
             <div id="page-wrapper">
                 <div id="page-inner">
+                    <?php 
+                        $contador = 0;
+                        if($consulta->num_rows == 0)
+                        {
+                            ?>
+                            <div class="col-md-12">
+                                <h4 class="text-center">Este módulo no contiene ninguna pregunta registrado</h4>
+                            </div>
+                            <?php
+                        }
+                        else
+                        {
+                    ?>
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="page-header-inicio">
@@ -44,7 +62,9 @@
                             </center>
                         </div>
                     </div>
-                    
+                    <?php
+                        }
+                    ?>
                     <?php include('../../template/footer.php') ?>
                 </div>
                 <!-- /. PAGE INNER  -->

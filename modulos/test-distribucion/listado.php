@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if (empty($_SESSION['usuario']) || $_SESSION['rol'] != 1 || !isset($_GET["id"]))
+        if (empty($_SESSION['usuario']) || $_SESSION['rol'] == 0 || ($_SESSION['rol'] == 2 && !isset($_GET["id"])))
     { 
         ?>
         <script type="text/javascript" language="javascript">

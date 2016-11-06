@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if (empty($_SESSION['usuario']) || $_SESSION['rol'] != 1)
+    if (empty($_SESSION['usuario']) || ($_SESSION['rol'] != 1 && $_SESSION['rol'] != 2))
     { 
         ?>
         <script type="text/javascript" language="javascript">
@@ -111,12 +111,19 @@
                                         <div class="col-md-12">
                                             <div class="form-group col-md-4">
                                                 <label>Rol de usuario</label>
+                                                <?php if($_SESSION['rol'] == 1) { ?>
                                                 <select class="form-control" name="rol" id="rol" required>
                                                     <option value="">Seleccione</option>
                                                     <option value="1">Administrador</option>
-                                                    <option value="0">Coordinador</option>
-                                                    <option value="2">Gerente</option> 
+                                                    <option value="2">Coordinador / Gerente</option>
+                                                    <option value="0">Analista</option> 
                                                 </select>
+                                                <?php } else if($_SESSION['rol'] == 2) { ?>
+                                                <select class="form-control" name="rol" id="rol" required>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="0">Analista</option> 
+                                                </select>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>

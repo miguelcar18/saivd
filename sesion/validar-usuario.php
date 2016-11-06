@@ -1,6 +1,7 @@
 <?php
     session_start();
     include("../conexion/conexion-bd.php");
+    include("../conexion/funciones.php");
 
     $usuario = $_POST['usuario'];
     $clave = $_POST['password'];
@@ -30,10 +31,19 @@
 
         if($campoUsuario ['fkdepartamento'] == $_POST['dpto'])
         {
+            $consulta_departamento = $conexion->query("
+                SELECT 
+                * 
+                FROM 
+                departamentos 
+                WHERE 
+                iddepartamento = '".$campoUsuario ['fkdepartamento']."' 
+            ") or die ($conexion->error);
+            $campoDepartamento = $consulta_departamento->fetch_array();
             ?>
 
             <script language="javascript" type="text/javascript">
-                window.location.replace("index.php");
+                window.location.replace("modulos/<?= strtolower(quitar_tildes($campoDepartamento['nombre'])) ?>/index.php");
             </script>
 
             <?php

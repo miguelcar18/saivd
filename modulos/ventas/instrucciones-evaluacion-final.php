@@ -8,6 +8,23 @@
         </script>
         <?php 
     }
+
+    include("../../conexion/conexion-bd.php");
+    include("../../conexion/funciones.php"); 
+
+    $limitesModulos = $conexion->query("SELECT min(idmodulo) AS minimoModulo, max(idmodulo) AS maximoModulo FROM modulos WHERE fkdepartamento = 1");
+    if($limitesModulos->num_rows > 0)
+    {
+        $camposLimitesModulos = $limitesModulos->fetch_array();
+
+        $limites = $conexion->query("SELECT * FROM preguntas WHERE fkmodulo BETWEEN ".$camposLimitesModulos ['minimoModulo']." AND ".$camposLimitesModulos ['maximoModulo']."");
+        if(!$limites)
+            $cantidad = 0;
+        else
+            $cantidad = $limites->num_rows;
+    }
+    else 
+        $cantidad = 0;
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +39,19 @@
             <?php include('../../template/sidebar.php') ?>
             <div id="page-wrapper">
                 <div id="page-inner">
+                    <?php 
+                        $contador = 0;
+                        if($cantidad == 0)
+                        {
+                            ?>
+                            <div class="col-md-12">
+                                <h4 class="text-center">Este departamento no contiene ninguna pregunta registrado</h4>
+                            </div>
+                            <?php
+                        }
+                        else
+                        {
+                    ?>
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="page-header-inicio">
@@ -44,7 +74,9 @@
                             </center>
                         </div>
                     </div>
-                    
+                    <?php
+                        }
+                    ?>
                     <?php include('../../template/footer.php') ?>
                 </div>
                 <!-- /. PAGE INNER  -->

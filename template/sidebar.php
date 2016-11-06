@@ -2,14 +2,14 @@
 <nav class="navbar-default navbar-side" role="navigation">
     <div class="sidebar-collapse">
         <ul class="nav" id="main-menu">
-            <li>
-                <a href="<?= $ruta ?>index.php" <?php if($url_actual=='index.php')echo 'class="active-menu"'; ?>><i class="fa fa-home"></i> Inicio</a>
-            </li>
             <?php
             /*Si no existe ningún usuario logueado*/ 
             if(!isset($_SESSION['usuario']))
             {
                 ?>
+                <li>
+                    <a href="<?= $ruta ?>index.php" <?php if($url_actual=='index.php')echo 'class="active-menu"'; ?>><i class="fa fa-home"></i> Inicio</a>
+                </li>
                 <li>
                     <a href="<?= $ruta ?>index.php"><i class="fa fa-file-o"></i> Guía de adiestramiento</a>
                 </li>
@@ -126,7 +126,7 @@
                     <a href="<?= $ruta ?>modulos/mercadeo/instrucciones-evaluacion-final.php" <?php if($url_actual=='mercadeo/instrucciones-evaluacion-final.php' || $url_actual=='mercadeo/evaluacion-final.php')echo 'class="active-menu"'; ?>><i class="fa fa-graduation-cap"></i> Evaluación final</a>
                 </li>
                 <li>
-                    <a href="<?= $ruta ?>index.php"><i class="fa fa-pie-chart"></i> Estadísticas</a>
+                    <a href="<?= $ruta ?>modulos/mercadeo/estadisticas.php" <?php if($url_actual=='mercadeo/estadisticas.php')echo 'class="active-menu"'; ?>><i class="fa fa-pie-chart"></i> Estadísticas</a>
                 </li>
                 <li>
                     <a href="<?= $ruta ?>modulos/modulos-mercadeo/listado.php" <?php if($url_actual=='modulos-mercadeo/listado.php' || $url_actual=='modulos-mercadeo/agregar.php' || strpos($url_actual, 'modulos-mercadeo/editar.php') !== false || strpos($url_actual, 'test-mercadeo/listado.php') !== false || strpos($url_actual, 'test-mercadeo/agregar.php') !== false || strpos($url_actual, 'test-mercadeo/editar.php') !== false)echo 'class="active-menu"'; ?>><i class="fa fa-cog"></i> Configuración</a>

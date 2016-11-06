@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if (empty($_SESSION['usuario']) || $_SESSION['rol'] != 1)
+    if (empty($_SESSION['usuario']) || ($_SESSION['rol'] != 1 && $_SESSION['rol'] != 2))
     { 
         ?>
         <script type="text/javascript" language="javascript">
@@ -99,11 +99,19 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Rol de usuario</label>
+                                                <?php if($_SESSION['rol'] == 1) { ?>
                                                 <select class="form-control" name="rol" id="rol" required>
                                                     <option value="" <?php if($campoUsuario['rol'] == "") { ?> selected <?php } ?>>Seleccione</option>
                                                     <option value="1" <?php if($campoUsuario['rol'] == "1") { ?> selected <?php } ?>>Administrador</option>
-                                                    <option value="0" <?php if($campoUsuario['rol'] == "0") { ?> selected <?php } ?>>Coordinador</option>
+                                                    <option value="2" <?php if($campoUsuario['rol'] == "2") { ?> selected <?php } ?>>Coordinador / Gerente</option>
+                                                    <option value="0" <?php if($campoUsuario['rol'] == "0") { ?> selected <?php } ?>>Analista</option>
                                                 </select>
+                                                <?php } else if($_SESSION['rol'] == 2) { ?>
+                                                <select class="form-control" name="rol" id="rol" required>
+                                                    <option value="" <?php if($campoUsuario['rol'] == "") { ?> selected <?php } ?>>Seleccione</option>
+                                                    <option value="0" <?php if($campoUsuario['rol'] == "0") { ?> selected <?php } ?>>Analista</option>
+                                                </select>
+                                                <?php } ?>
                                             </div>
                                         </div>
                                     </div>

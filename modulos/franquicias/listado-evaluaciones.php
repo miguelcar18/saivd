@@ -42,29 +42,40 @@
                     <div class="row">
                         <?php 
                         $contador = 0;
-                        while($row = $adiestramientos->fetch_array())
-                        { 
+                        if($adiestramientos->num_rows == 0)
+                        {
                             ?>
-                            <div class="col-md-3">
-                                <div class="panel panel-primary text-center no-boder bg-color-blue">
-                                    <div class="panel-body">
-                                        <i class="fa fa-check-square fa-5x"></i>
-                                    </div>
-                                    <div class="panel-footer back-footer-blue">
-                                         <a href="instrucciones-evaluacion.php?id=<?= $row['idmodulo'] ?>" style="color:white; font-weight: bold;"><?= $row['nombre'] ?></a>
-                                    </div>
-                                </div>
+                            <div class="col-md-12">
+                                <h4 class="text-center">Este departamento no contiene ningún módulo registrado</h4>
                             </div>
-                            <?php 
-                            $contador++;
-                            if($contador == 4)
-                            {
+                            <?php
+                        }
+                        else
+                        {
+                            while($row = $adiestramientos->fetch_array())
+                            { 
                                 ?>
+                                <div class="col-md-3">
+                                    <div class="panel panel-primary text-center no-boder bg-color-blue">
+                                        <div class="panel-body">
+                                            <i class="fa fa-check-square fa-5x"></i>
+                                        </div>
+                                        <div class="panel-footer back-footer-blue">
+                                             <a href="instrucciones-evaluacion.php?id=<?= $row['idmodulo'] ?>" style="color:white; font-weight: bold;"><?= $row['nombre'] ?></a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="row">
-                                <?php
-                                $contador = 0;
-                            } 
+                                <?php 
+                                $contador++;
+                                if($contador == 4)
+                                {
+                                    ?>
+                                    </div>
+                                    <div class="row">
+                                    <?php
+                                    $contador = 0;
+                                } 
+                            }
                         }
                         ?>
                     </div>
