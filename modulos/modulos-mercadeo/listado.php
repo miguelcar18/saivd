@@ -67,6 +67,10 @@
                                                     <td><?= $row['nombre'] ?></td>
                                                     <td><?= $row['nivel_mod'] ?></td>
                                                     <td>
+                                                        <a href="../test-mercadeo/listado.php?id=<?= $row['idmodulo'] ?>" class="tooltip-success preguntas" data-rel="tooltip" title="Preguntas <?= $row['nombre'] ?>" style="text-decoration:none;"> 
+                                                            <span class="btn btn-sm btn-info"> <i class="fa fa-question"></i> </span> 
+                                                        </a>
+                                                        &nbsp;
                                                         <a href="editar.php?id=<?= $row['idmodulo'] ?>" class="tooltip-success editar" data-rel="tooltip" title="Editar <?= $row['nombre'] ?>" style="text-decoration:none;"> 
                                                             <span class="btn btn-sm btn-warning"> <i class="fa fa-pencil"></i> </span> 
                                                         </a>

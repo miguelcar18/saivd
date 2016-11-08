@@ -125,6 +125,17 @@
                                                 </select>
                                                 <?php } ?>
                                             </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Agencia</label>
+                                                <select class="form-control" name="agencia" id="agencia" required>
+                                                    <option value="Maturín">Maturín</option>
+                                                    <option value="Bolívar">Bolívar</option>
+                                                    <option value="Puerto Ordaz">Puerto Ordaz</option>
+                                                    <option value="San Félix">San Félix</option>
+                                                    <option value="Tumeremo">Tumeremo</option>
+                                                    <option value="Upata">Upata</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">

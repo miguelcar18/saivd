@@ -29,7 +29,7 @@
         $_SESSION['fkdepartamento'] = $campoUsuario ['fkdepartamento'];
         $_SESSION['rol']            = $campoUsuario ['rol'];
 
-        if($campoUsuario ['fkdepartamento'] == $_POST['dpto'])
+        if($campoUsuario ['fkdepartamento'] == $_POST['dpto'] || $campoUsuario ['rol'] == 1)
         {
             $consulta_departamento = $conexion->query("
                 SELECT 
@@ -37,7 +37,7 @@
                 FROM 
                 departamentos 
                 WHERE 
-                iddepartamento = '".$campoUsuario ['fkdepartamento']."' 
+                iddepartamento = '".$_POST['dpto']."' 
             ") or die ($conexion->error);
             $campoDepartamento = $consulta_departamento->fetch_array();
             ?>

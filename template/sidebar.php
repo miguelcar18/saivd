@@ -35,7 +35,7 @@
             }
 
             /*Si existe algún usuario logueado y pertenece al departamento de ventas*/ 
-            if(isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 1)
+            if((isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 1 && strpos($_SERVER["REQUEST_URI"], 'distribucion/') === false && strpos($_SERVER["REQUEST_URI"], 'franquicias/') === false && strpos($_SERVER["REQUEST_URI"], 'mercadeo/') === false) || (isset($_SESSION['rol']) && $_SESSION['rol'] == 1 && strpos($_SERVER["REQUEST_URI"], 'ventas/') !== false))
             {
                 ?>
                 <li>
@@ -60,7 +60,7 @@
             }
 
             /*Si existe algún usuario logueado y pertenece al departamento de distribución*/ 
-            if(isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 2)
+            if((isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 2 && strpos($_SERVER["REQUEST_URI"], 'ventas/') === false && strpos($_SERVER["REQUEST_URI"], 'franquicias/') === false && strpos($_SERVER["REQUEST_URI"], 'mercadeo/') === false) || (isset($_SESSION['rol']) && $_SESSION['rol'] == 1 && strpos($_SERVER["REQUEST_URI"], 'distribucion/') !== false))
             {
                 ?>
                 <li>
@@ -85,7 +85,7 @@
             }
 
             /*Si existe algún usuario logueado y pertenece al departamento de franquicias*/ 
-            if(isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 3)
+            if((isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 3 && strpos($_SERVER["REQUEST_URI"], 'ventas/') === false && strpos($_SERVER["REQUEST_URI"], 'distribucion/') === false && strpos($_SERVER["REQUEST_URI"], 'mercadeo/') === false) || (isset($_SESSION['rol']) && $_SESSION['rol'] == 1 && strpos($_SERVER["REQUEST_URI"], 'franquicias/') !== false))
             {
                 ?>
                 <li>
@@ -110,7 +110,7 @@
             }
 
             /*Si existe algún usuario logueado y pertenece al departamento de mercadeo*/ 
-            if(isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 4)
+            if((isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 4 && strpos($_SERVER["REQUEST_URI"], 'ventas/') === false && strpos($_SERVER["REQUEST_URI"], 'distribucion/') === false && strpos($_SERVER["REQUEST_URI"], 'franquicias/') === false) || (isset($_SESSION['rol']) && $_SESSION['rol'] == 1 && strpos($_SERVER["REQUEST_URI"], 'mercadeo/') !== false))
             {
                 ?>
                 <li>
@@ -135,7 +135,7 @@
             }
 
             /*Si existe algún usuario logueado y es un administrador*/
-            if(isset($_SESSION['rol']) && $_SESSION['rol'] == 1)
+            if(isset($_SESSION['rol']) && ($_SESSION['rol'] == 1 || $_SESSION['rol'] == 2))
             { 
                 ?>
                 <li>

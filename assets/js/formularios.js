@@ -827,3 +827,16 @@ $(".preguntaVentasEliminar").click(function() {
 
     return false;
 });
+
+/*
+$('select#fkdepartamento').on('change', function(){
+    if($(this).val() == 1)
+    {
+
+    }
+    else 
+    {
+        $('select#agencia').val();
+    }
+});
+*/

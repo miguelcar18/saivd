@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (empty($_SESSION['usuario']) || $_SESSION['fkdepartamento'] != 4)
+    if (empty($_SESSION['usuario']) || ($_SESSION['rol'] == 2 && $_SESSION['fkdepartamento'] != 4) || ($_SESSION['rol'] == 0 && $_SESSION['fkdepartamento'] != 4))
     { 
         ?>
         <script type="text/javascript" language="javascript">
@@ -120,7 +120,7 @@
                                             ?>
                                         </div>
                                         <div class="panel-footer back-footer-green">
-                                             <a href="archivos.php?id=<?= $row['idarchivo']?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
+                                             <a href="../../archivos/mercadeo/<?= $camposModulo['nombre'].'/'.$row['nombrel']?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
                                         </div>
                                     </div>
                                 </div>

@@ -113,6 +113,17 @@
                                                 </select>
                                                 <?php } ?>
                                             </div>
+                                            <div class="form-group col-md-4">
+                                                <label>Agencia</label>
+                                                <select class="form-control" name="agencia" id="agencia" required>
+                                                    <option value="Maturín" <?php if($campoUsuario['agencia'] == "Maturín") { ?> selected <?php } ?>>Maturín</option>
+                                                    <option value="Bolívar" <?php if($campoUsuario['agencia'] == "Bolívar") { ?> selected <?php } ?>>Bolívar</option>
+                                                    <option value="Puerto Ordaz" <?php if($campoUsuario['agencia'] == "Puerto Ordaz") { ?> selected <?php } ?>>Puerto Ordaz</option>
+                                                    <option value="San Félix" <?php if($campoUsuario['agencia'] == "San Félix") { ?> selected <?php } ?>>San Félix</option>
+                                                    <option value="Tumeremo" <?php if($campoUsuario['agencia'] == "Tumeremo") { ?> selected <?php } ?>>Tumeremo</option>
+                                                    <option value="Upata" <?php if($campoUsuario['agencia'] == "Upata") { ?> selected <?php } ?>>Upata</option>
+                                                </select>
+                                            </div>sa
                                         </div>
                                     </div>
                                     <div class="row">

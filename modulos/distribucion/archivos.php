@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (empty($_SESSION['usuario']) || $_SESSION['fkdepartamento'] != 2)
+    if (empty($_SESSION['usuario']) || ($_SESSION['rol'] == 2 && $_SESSION['fkdepartamento'] != 2) || ($_SESSION['rol'] == 0 && $_SESSION['fkdepartamento'] != 2))
     { 
         ?>
         <script type="text/javascript" language="javascript">
@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="page-header-inicio">
-                                <b>ARCHIVOS  <?= strtoupper($camposModulo['nombre']) ?> - DISTRIBUCIÃ“N</b>
+                                <b>ARCHIVOS  <?= strtoupper($camposModulo['nombre']) ?> - DISTRIBUCIÓN</b>
                             </h3>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         {
                             ?>
                             <div class="col-md-12">
-                                <h4 class="text-center">Este mÃ³dulo no contiene ningÃºn archivo registrado</h4>
+                                <h4 class="text-center">Este módulo no contiene ningún archivo registrado</h4>
                             </div>
                             <?php
                         }
@@ -120,7 +120,7 @@
                                             ?>
                                         </div>
                                         <div class="panel-footer back-footer-green">
-                                             <a href="archivos.php?id=<?= $row['idarchivo']?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
+                                             <a href="../../archivos/distribucion/<?= $camposModulo['nombre'].'/'.$row['nombrel']?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
                                         </div>
                                     </div>
                                 </div>
