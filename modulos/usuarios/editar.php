@@ -123,7 +123,7 @@
                                                     <option value="Tumeremo" <?php if($campoUsuario['agencia'] == "Tumeremo") { ?> selected <?php } ?>>Tumeremo</option>
                                                     <option value="Upata" <?php if($campoUsuario['agencia'] == "Upata") { ?> selected <?php } ?>>Upata</option>
                                                 </select>
-                                            </div>sa
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">

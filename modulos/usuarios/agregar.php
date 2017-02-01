@@ -66,9 +66,11 @@
                                                 <label> Cargo </label>
                                                 <select class="form-control" name="cargo" id="cargo" required>
                                                     <option value="">Seleccione</option>
-                                                    <option value="1">Supervisor</option>
-                                                    <option value="2">Analista</option>
+                                                    <option value="1">Gerente</option>
+                                                    <option value="2">Coordinador</option>
+                                                    <option value="3">Analista</option>
                                                     <option value="0">Franquiciado</option>
+                                                    <option value="4">Supervisor</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-4">
@@ -116,12 +118,14 @@
                                                     <option value="">Seleccione</option>
                                                     <option value="1">Administrador</option>
                                                     <option value="2">Coordinador / Gerente</option>
-                                                    <option value="0">Analista</option> 
+                                                    <option value="0">Analista / Franquiciado/ Supervisor</option> 
                                                 </select>
                                                 <?php } else if($_SESSION['rol'] == 2) { ?>
                                                 <select class="form-control" name="rol" id="rol" required>
                                                     <option value="">Seleccione</option>
-                                                    <option value="0">Analista</option> 
+                                                     <option value="1">Administrador</option>
+                                                    <option value="2">Coordinador / Gerente</option>
+                                                    <option value="0">Analista/ Franquiciado/Supervisor</option> 
                                                 </select>
                                                 <?php } ?>
                                             </div>

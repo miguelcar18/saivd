@@ -45,7 +45,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form role="form" method="POST" action="guardar.php" name="preguntaVentasEditForm" id="preguntaVentasEditForm" enctype="multipart/form-data">
+                                <form role="form" method="POST" action="guardar.php" name="preguntaDistribucionEditForm" id="preguntaDistribucionEditForm" enctype="multipart/form-data">
                                 <input type="hidden" name="fkmodulo" id="fkmodulo" value="<?= $_GET["id"] ?>">
                                 <input type="hidden" name="id" id="id" value="<?= $_GET["idp"] ?>">
                                     <div class="row">
@@ -131,6 +131,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group col-md-12">
+                                                <a href="javascript:history.back()" class="btn btn-primary">Regresar</a>
                                                 <button type="submit" class="btn btn-success">Guardar</button>
                                             </div>
                                         </div>

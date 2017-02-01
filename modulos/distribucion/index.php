@@ -92,7 +92,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <h3><b> Pilares de distribución: </b></h3>
+                            <h3><b> Pilares de Distribución: </b></h3>
                         </div>
                     </div>
                     <div class="row">

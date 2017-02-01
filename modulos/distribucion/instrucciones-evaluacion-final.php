@@ -64,15 +64,27 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <center>
+                            
                                 <fieldset id="cuerpoinicio">
                                     <p class="text-center">
-                                        Responda las siguientes preguntas seleccionando la opción que usted considere correcta de acuerdo a lo estudiado. Debe contestar todas las preguntas que se presentan en el test. Tiene un máximo de 3  intentos para aprobar el test, sino debe realizar el  adiestramiento del módulo nuevamente. Debe acertar todas las respuestas para aprobar el test. Presione el botón "Realizar test" para comenzar.
-                                    </p>
-                                    <a href="evaluacion-final.php?departamento=2" class="btn btn-primary" style="font-weight: bold">Realizar test</a><br><br>
+                                 Responda las siguientes preguntas seleccionando la opción que usted considere correcta de acuerdo a lo estudiado:</p>
+                                 <br>
+                                     <li>Debe contestar todas las preguntas que se presentan en la evaluación.   
+                                     </li>
+                                     <li>Tiene un máximo de 3  intentos para aprobar la evaluación. "Sino debe realizar el  adiestramiento del módulo nuevamente".
+                                     </li>
+                                     <li>
+                                     Debe acertar todas las respuestas para aprobar el la evaluación.
+                                     </li>
+                                     <li> 
+                                     Presione el botón "Iniciar Evaluación" para comenzar.
+                                     </li>
+                                     </div>
+                                     </div>
+                                     <center>
+                                    <a href="evaluacion-final.php?departamento=2" class="btn btn-primary" style="font-weight: bold">Comenzar Evaluación</a><br><br>
                                 </fieldset>
-                            </center>
-                        </div>
+                                </div>
                     </div>
                     <?php
                         }

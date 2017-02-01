@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="page-header-inicio">
-                                <b>ARCHIVOS  <?= strtoupper($camposModulo['nombre']) ?> - DISTRIBUCIÓN</b>
+                                <b>ARCHIVOS  <?= strtoupper($camposModulo['nombre']) ?> - DISTRIBUCIÃ“N</b>
                             </h3>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                         {
                             ?>
                             <div class="col-md-12">
-                                <h4 class="text-center">Este módulo no contiene ningún archivo registrado</h4>
+                                <h4 class="text-center">Este mÃ³dulo no contiene ningÃºn archivo registrado</h4>
                             </div>
                             <?php
                         }
@@ -93,7 +93,7 @@
                                                 <i class="fa fa-file-pdf-o fa-5x"></i>
                                                 <?php
                                                 }
-                                                else if(end($separar) == 'mp4' || end($separar) == 'mov')
+                                                else if(end($separar) == 'mp4' || end($separar) == 'mov' || end($separar) == 'wmv')
                                                 {
                                                 ?>
                                                 <i class="fa fa-file-movie-o fa-5x"></i>

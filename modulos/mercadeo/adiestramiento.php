@@ -13,8 +13,27 @@
     include("../../conexion/funciones.php"); 
 
     $adiestramientos= $conexion->query("SELECT * FROM modulos WHERE fkdepartamento = 4 ORDER BY nivel_mod");
+    $adiestramiendos= $conexion->query("SELECT * FROM modulos WHERE fkdepartamento = 2 ORDER BY nivel_mod");
     if(!$adiestramientos)
         echo $conexion->error;
+    if(!$adiestramiendos)
+        echo $conexion->error;
+
+    $arrayIdModulos = array();
+    $switch = false;
+    $cantidadModulosMostrar = 0;
+    while($row = $adiestramiendos->fetch_array())
+    {
+        $arrayIdModulos[] = $row['idmodulo'];
+    }
+    while ($switch == false && $cantidadModulosMostrar < count($arrayIdModulos)) {
+        $cantidadModulosMostrar++;
+        $estadistica = $conexion->query("SELECT * FROM estadisticas WHERE resultado = 1 AND modulo = ".$arrayIdModulos[$cantidadModulosMostrar-1]." AND usuario = ".$_SESSION['id_usuario']."");
+        if($estadistica->num_rows == 0)
+        {
+            $switch = true;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +61,7 @@
                     <div class="row">
                         <?php 
                         $contador = 0;
+                        $contadorModulos = 0;
                         if($adiestramientos->num_rows == 0)
                         {
                             ?>
@@ -53,28 +73,32 @@
                         else
                         {
                             while($row = $adiestramientos->fetch_array())
-                            { 
-                                ?>
-                                <div class="col-md-3">
-                                    <div class="panel panel-primary text-center no-boder bg-color-red">
-                                        <div class="panel-body">
-                                            <i class="fa fa-book fa-5x"></i>
-                                        </div>
-                                        <div class="panel-footer back-footer-red">
-                                             <a href="archivos.php?id=<?= $row['idmodulo']?>" style="color:white; font-weight: bold;"><?= $row['nombre'] ?></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <?php 
-                                $contador++;
-                                if($contador == 4)
+                            {
+                                if($contadorModulos < $cantidadModulosMostrar)
                                 {
                                     ?>
+                                    <div class="col-md-3">
+                                        <div class="panel panel-primary text-center no-boder bg-color-red">
+                                            <div class="panel-body">
+                                                <i class="fa fa-book fa-5x"></i>
+                                            </div>
+                                            <div class="panel-footer back-footer-red">
+                                                 <a href="archivos_lista.php?id=<?= $row['idmodulo']?>" style="color:white; font-weight: bold;"><?= $row['nombre'] ?></a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="row">
-                                    <?php
-                                    $contador = 0;
-                                } 
+                                    <?php 
+                                    $contador++;
+                                    if($contador == 4)
+                                    {
+                                        ?>
+                                        </div>
+                                        <div class="row">
+                                        <?php
+                                        $contador = 0;
+                                    }
+                                }
+                                $contadorModulos++;
                             }
                         }
                         ?>

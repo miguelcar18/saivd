@@ -53,7 +53,7 @@
             $nombresArchivos = array();
             foreach ($files as $file) {
                 $tipo               = $file["type"];
-                $nombreA            = $file["name"];
+                $nombreA            = quitar_tildes(str_replace(' ','_',$file["name"]));
                 $nombresArchivos[]  = $nombreA;
                 move_uploaded_file(@$file["tmp_name"], "../../archivos/distribucion/".$_POST['nombre']."/". $nombreA);
 

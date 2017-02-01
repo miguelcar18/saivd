@@ -81,7 +81,7 @@
                                                     ?>
                                                     <div class="radio">
                                                         <label>
-                                                            <input name="respuesta<?= $contador ?>[]" id="respuesta<?= $contador ?>" value="<?= $rowRespuestas['idrespuesta'] ?>" type="radio">&nbsp;
+                                                            <input name="respuesta<?= $contador ?>[]" id="respuesta<?= $contador ?>" class="respuesta<?= $contador ?>" value="<?= $rowRespuestas['idrespuesta'] ?>" type="radio" required>&nbsp;
                                                             <?= $rowRespuestas['contenido'] ?>
                                                         </label>
                                                     </div>
@@ -94,7 +94,7 @@
                                                     ?>
                                                     <div class="checkbox">
                                                         <label>
-                                                            <input name="respuesta<?= $contador ?>[]" id="respuesta<?= $contador ?>" value="<?= $rowRespuestas['idrespuesta'] ?>" type="checkbox">&nbsp;
+                                                            <input name="respuesta<?= $contador ?>[]" id="respuesta<?= $contador ?>" class="respuesta<?= $contador ?>" value="<?= $rowRespuestas['idrespuesta'] ?>" type="checkbox"required>&nbsp;
                                                             <?= $rowRespuestas['contenido'] ?>
                                                         </label>
                                                     </div>

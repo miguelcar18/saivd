@@ -37,7 +37,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form role="form" method="POST" action="guardar.php" name="moduloFranquiciasForm" id="moduloDistribucionForm" enctype="multipart/form-data">
+                                <form role="form" method="POST" action="guardar.php" name="moduloFranquiciasForm" id="moduloFranquiciasForm" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group col-md-9">
@@ -62,7 +62,8 @@
                                         <div class="col-md-12">
                                             <div class="form-group col-md-12">
                                                 <button type="submit" class="btn btn-success">Guardar</button>
-                                            </div>
+                                                <a href="javascript:history.back()" class="btn btn-primary">Regresar</a>
+                                                                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">

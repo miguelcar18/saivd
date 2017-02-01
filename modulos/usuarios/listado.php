@@ -12,7 +12,10 @@
     include("../../conexion/conexion-bd.php");
     include("../../conexion/funciones.php"); 
 
-    $usuarios= $conexion->query("SELECT * FROM usuarios ORDER BY usuario");
+    if($_SESSION['rol'] == 1)
+        $usuarios= $conexion->query("SELECT * FROM usuarios ORDER BY usuario");
+    else if($_SESSION['rol'] == 2)
+        $usuarios= $conexion->query("SELECT * FROM usuarios WHERE fkdepartamento = ".$_SESSION['fkdepartamento']." ORDER BY usuario");
     if(!$usuarios)
         echo $conexion->error;
 ?>
@@ -73,10 +76,6 @@
                                                     <td>
                                                         <a href="editar.php?id=<?= $row['idusuario'] ?>" class="tooltip-success editar" data-rel="tooltip" title="Editar <?= $row['usuario'] ?>" style="text-decoration:none;"> 
                                                             <span class="btn btn-sm btn-warning"> <i class="fa fa-pencil"></i> </span> 
-                                                        </a>
-                                                        &nbsp;
-                                                        <a href="" data-id="<?= $row['idusuario'] ?>"  class="usuarioEliminar" data-fila="<?=$i?>" data-rel="tooltip" title="Eliminar <?= $row['usuario'] ?>" objeto="<?= $row['idusuario'] ?>"> 
-                                                            <span class="btn btn-sm btn-danger"> <i class="fa fa-trash"></i> </span> 
                                                         </a>
                                                     </td>
                                                 </tr>

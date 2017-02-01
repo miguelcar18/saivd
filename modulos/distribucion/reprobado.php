@@ -51,6 +51,7 @@
                                         <img src="../../assets/img/xs.png" width="auto" height="120px">
                                         <br><br>
                                         <h1> NO ALCANZÓ LA PUNTUACIÓN DESEADA</h1>
+                                        <h4> Regrese a la opción "Evaluaciones" para realizar la prueba nuevamente
                                         <br><br>
                                         <div class="form-group">
                                             <a href="index.php" class="btn btn-primary">CONTINUAR</a> 

@@ -93,7 +93,7 @@
                                                 <i class="fa fa-file-pdf-o fa-5x"></i>
                                                 <?php
                                                 }
-                                                else if(end($separar) == 'mp4' || end($separar) == 'mov')
+                                                else if(end($separar) == 'mp4' || end($separar) == 'mov' || end($separar) == 'wmv')
                                                 {
                                                 ?>
                                                 <i class="fa fa-file-movie-o fa-5x"></i>
@@ -120,7 +120,7 @@
                                             ?>
                                         </div>
                                         <div class="panel-footer back-footer-green">
-                                             <a href="../../archivos/ventas/<?= $camposModulo['nombre'].'/'.$row['nombrel']?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
+                                             <a href="archivos.php?id=<?= $row['idarchivo']?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
                                         </div>
                                     </div>
                                 </div>

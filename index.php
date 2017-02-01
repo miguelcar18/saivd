@@ -11,7 +11,7 @@
     <body>
         <div id="wrapper">
             <?php include('template/navbar.php') ?>
-            <?php include('template/sidebar.php') ?>
+            <?php include('template/sidebar-inicio.php') ?>
             <div id="page-wrapper">
                 <div id="page-inner">
                     <div class="row">
@@ -34,33 +34,9 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <center><img src="assets/img/logo-saidv.png" height="200px" width="auto"></center>
+                            <center><img src="assets/img/saivd.png" height="250px" width="auto"></center>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12"><br></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="text-center">
-                                <b>COORDINACIONES DISPONIBLES</b><br><br>
-                            </h3>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-3 col-sm-12 col-xs-12">
-                            <a href="login.php?dpto=2" class="btn btn-success btn-block"><b>Coord. Distribución</b></a>
-                        </div>
-                        <div class="col-md-3 col-sm-12 col-xs-12">
-                            <a href="login.php?dpto=3" class="btn btn-primary btn-block"><b>Coord. Franquicias</b></a>
-                        </div>
-                        <div class="col-md-3 col-sm-12 col-xs-12">
-                            <a href="login.php?dpto=4" class="btn btn-danger btn-block"><b>Coord. Mercadeo</b></a>
-                        </div>
-                        <div class="col-md-3 col-sm-12 col-xs-12">
-                            <a href="login.php?dpto=1" class="btn btn-warning btn-block"><b>Gerencia Ventas</b></a>
-                        </div>
-                    </div>
+                    </div>           
     				<?php include('template/footer.php') ?>
                 </div>
                 <!-- /. PAGE INNER  -->

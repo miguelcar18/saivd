@@ -40,7 +40,7 @@
                     <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <form role="form" method="POST" action="guardar.php" name="moduloFranquiciasEditForm" id="moduloDistribucionEditForm">
+                                <form role="form" method="POST" action="guardar.php" name="moduloFranquiciasEditForm" id="moduloFranquiciasEditForm">
                                     <input type="hidden" name="id" id="id" value="<?= $campoModulo['idmodulo']?>"/>
                                     <div class="row">
                                         <div class="col-md-12">

@@ -51,6 +51,7 @@
                                         <img src="../../assets/img/check.png" width="auto" height="100px">
                                         <br><br>
                                         <h1> ADIESTRAMIENTO APROBADO</h1>
+                                         <h4>Estudiar el siguiente tema desbloqueado en la opción de "Módulos de Adiestramientos" <h4>
                                         <br><br>
                                         <div class="form-group">
                                             <a href="index.php" class="btn btn-primary">CONTINUAR</a> 

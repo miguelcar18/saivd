@@ -131,6 +131,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group col-md-12">
+                                                <a href="javascript:history.back()" class="btn btn-primary">Regresar</a>
                                                 <button type="submit" class="btn btn-success">Guardar</button>
                                             </div>
                                         </div>

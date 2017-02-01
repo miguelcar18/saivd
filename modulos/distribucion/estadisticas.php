@@ -12,7 +12,7 @@
     include("../../conexion/conexion-bd.php");
     include("../../conexion/funciones.php"); 
 
-    $estadistica = $conexion->query("SELECT modulos.nombre AS modulo, estadisticas.resultado AS resultado, estadisticas.fecha AS fecha FROM estadisticas INNER JOIN modulos ON modulos.idmodulo = estadisticas.modulo WHERE departamento = 2 ORDER BY fecha ASC");
+    $estadistica = $conexion->query("SELECT modulos.nombre AS modulo, estadisticas.resultado AS resultado, estadisticas.fecha AS fecha FROM estadisticas INNER JOIN modulos ON modulos.idmodulo = estadisticas.modulo WHERE departamento = 2 AND  usuario = ".$_SESSION['id_usuario']." ORDER BY fecha ASC");
     $consultaAprobados = $conexion->query("SELECT count(resultado) AS cantidadAprobados FROM estadisticas WHERE usuario = ".$_SESSION['id_usuario']." AND resultado = 1 AND  departamento = 2");
     $consultaReprobados = $conexion->query("SELECT count(resultado) AS cantidadReprobados FROM estadisticas WHERE usuario = ".$_SESSION['id_usuario']." AND resultado = 0 AND  departamento = 2");
     $campoAprobados = $consultaAprobados->fetch_array();

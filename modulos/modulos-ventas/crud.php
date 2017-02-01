@@ -16,8 +16,8 @@
         $nivel_mod  = $_POST['nivel_mod'];
         $archivos   = $_FILES['archivos'];
 
-        if(!is_dir("../../archivos/distribucion/".$_POST['nombre']."")) 
-            mkdir("../../archivos/distribucion/".$_POST['nombre']."", 0777);
+        if(!is_dir("../../archivos/ventas/".$_POST['nombre']."")) 
+            mkdir("../../archivos/ventas/".$_POST['nombre']."", 0777);
 
         $files = array();
         foreach ($archivos  as $k => $l) {
@@ -53,9 +53,9 @@
             $nombresArchivos = array();
             foreach ($files as $file) {
                 $tipo               = $file["type"];
-                $nombreA            = $file["name"];
+                $nombreA            = quitar_tildes(str_replace(' ','_',$file["name"]));
                 $nombresArchivos[]  = $nombreA;
-                move_uploaded_file(@$file["tmp_name"], "../../archivos/distribucion/".$_POST['nombre']."/". $nombreA);
+                move_uploaded_file(@$file["tmp_name"], "../../archivos/ventas/".$_POST['nombre']."/". $nombreA);
 
                 sleep(5);
 
@@ -95,7 +95,7 @@
     {
         ?><script type="text/javascript">
 
-        $('form#moduloDistribucionForm').each(function () {
+        $('form#moduloVentasForm').each(function () {
             this.reset();
         });
 
@@ -174,7 +174,7 @@
 
     function eliminarDir($carpeta)
     {
-        foreach(glob("../../archivos/distribucion/".$carpeta . "/*") as $archivos_carpeta)
+        foreach(glob("../../archivos/ventas/".$carpeta . "/*") as $archivos_carpeta)
         {
             if (is_dir($archivos_carpeta))
             {
@@ -185,5 +185,5 @@
                 unlink($archivos_carpeta);
             }
         }
-        rmdir("../../archivos/distribucion/".$carpeta);
+        rmdir("../../archivos/ventas/".$carpeta);
     }

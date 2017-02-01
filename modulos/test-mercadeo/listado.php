@@ -45,6 +45,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
+                        <a href="javascript:history.back()" class="btn btn-success">Regresar</a>
                         <a href="agregar.php?id=<?= $_GET['id'] ?>" class="btn btn-primary">Agregar pregunta</a>
                         <br><br>
                     </div>

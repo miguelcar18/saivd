@@ -55,9 +55,10 @@
                             <center>
                                 <fieldset id="cuerpoinicio">
                                     <p class="text-center">
-                                        Responda las siguientes preguntas seleccionando la opción que usted considere correcta de acuerdo a lo estudiado. Debe contestar todas las preguntas que se presentan en el test. Tiene un máximo de 3  intentos para aprobar el test, sino debe realizar el  adiestramiento del módulo nuevamente. Debe acertar todas las respuestas para aprobar el test. Presione el botón "Realizar test" para comenzar.
+                                     Responda las siguientes preguntas seleccionando la opción que usted considere correcta de acuerdo a lo estudiado. Debe contestar todas las preguntas que se presentan en la evaluación. Tiene un máximo de 3  intentos para aprobar la evaluación, sino debe realizar el  adiestramiento del módulo nuevamente. Debe acertar todas las respuestas para aprobar el la evaluación. Presione el botón "Realizar Evaluación" para comenzar.
+
                                     </p>
-                                    <a href="evaluacion.php?idmodulo=<?= $_GET['id'] ?>" class="btn btn-primary" style="font-weight: bold">Realizar test</a><br><br>
+                                    <a href="evaluacion.php?idmodulo=<?= $_GET['id'] ?>" class="btn btn-primary" style="font-weight: bold">Realizar Evaluación</a><br><br>
                                 </fieldset>
                             </center>
                         </div>

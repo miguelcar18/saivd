@@ -38,6 +38,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
+                    
                         <a href="agregar.php" class="btn btn-primary">Agregar módulo</a>
                         <br><br>
                     </div>

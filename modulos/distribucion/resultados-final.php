@@ -11,19 +11,7 @@
 
 	include("../../conexion/conexion-bd.php");
 	include("../../conexion/funciones.php");
-
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta1']."' AND correcta = 1<br>";
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta2']."' AND correcta = 1<br>";
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta3']."' AND correcta = 1<br>";
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta4']."' AND correcta = 1<br>";
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta5']."' AND correcta = 1<br>";
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta6']."' AND correcta = 1<br>";
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta7']."' AND correcta = 1<br>";
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta8']."' AND correcta = 1<br>";
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta9']."' AND correcta = 1<br>";
-	echo "SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta10']."' AND correcta = 1<br>";
 	
-	/*
 	$respuestasPregunta1 = $conexion->query("SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta1']."' AND correcta = 1");
 	$respuestasPregunta2 = $conexion->query("SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta2']."' AND correcta = 1");
 	$respuestasPregunta3 = $conexion->query("SELECT idrespuesta FROM respuestas WHERE fkpregunta = '".$_POST['pregunta3']."' AND correcta = 1");
@@ -97,4 +85,3 @@
 	    </script>
 	    <?php
 	}
-	*/

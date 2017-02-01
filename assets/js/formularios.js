@@ -653,18 +653,132 @@ $(".moduloMercadeoEliminar").click(function() {
     return false;
 });
 
-$('#rootwizard').bootstrapWizard({onTabShow: function(tab, navigation, index) {
-    var $total = navigation.find('li').length;
-    var $current = index+1;
-    var $percent = ($current/$total) * 100;
-    $('#rootwizard').find('.bar').css({width:$percent+'%'});
-}});
-$('#rootwizard .finish').click(function() {
-    /*
-    alert('Finished!, Starting over!');
-    $('#rootwizard').find("a[href*='tab1']").trigger('click');
-    */
-    $("#rootwizard").submit();
+$('#rootwizard').bootstrapWizard({
+    onNext: function(tab, navigation, index) {
+        var $current = index+1;
+        if(index==1)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta1').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta1').focus();
+                return false;
+            }
+        }
+        if(index==2)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta2').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta2').focus();
+                return false;
+            }
+        }
+        if(index==3)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta3').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta3').focus();
+                return false;
+            }
+        }
+        if(index==4)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta4').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta4').focus();
+                return false;
+            }
+        }
+        if(index==5)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta5').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta5').focus();
+                return false;
+            }
+        }
+        if(index==6)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta6').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta6').focus();
+                return false;
+            }
+        }
+        if(index==7)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta7').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta7').focus();
+                return false;
+            }
+        }
+        if(index==8)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta8').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta8').focus();
+                return false;
+            }
+        }
+        if(index==9)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta9').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta9').focus();
+                return false;
+            }
+        }
+        if(index==10)
+        {
+            // Make sure we entered the name
+            if(!$('.respuesta10').is(':checked'))
+            {
+                alert('Debes seleccionar al menos una respuesta');
+                //$('#respuesta10').focus();
+                return false;
+            }
+        }
+    }, 
+    onTabShow: function(tab, navigation, index) {
+        var $total = navigation.find('li').length;
+        var $current = index+1;
+        var $percent = ($current/$total) * 100;
+        $('#rootwizard').find('.bar').css({width:$percent+'%'});
+    }
+});
+$('#rootwizard .finish').click(function(tab, navigation, index) {
+    if(!$('.respuesta2').is(':checked') || ($(".respuesta10").length && !$('.respuesta10').is(':checked')))
+    {
+        alert('Debes seleccionar al menos una respuesta');
+        //$('#respuesta2').focus();
+        return false;
+    }
+    else
+    {
+        /*
+        alert('Finished!, Starting over!');
+        $('#rootwizard').find("a[href*='tab1']").trigger('click');
+        */
+        $("#rootwizard").submit();
+    }
 });
 
 $('#dataTables-example').dataTable({
@@ -828,15 +942,380 @@ $(".preguntaVentasEliminar").click(function() {
     return false;
 });
 
-/*
-$('select#fkdepartamento').on('change', function(){
-    if($(this).val() == 1)
-    {
-
-    }
-    else 
-    {
-        $('select#agencia').val();
+$('#preguntaDistribucionForm').validate({
+    rules: {
+        pregunta: {
+            required: true
+        },
+        tipo_respuesta: {
+            required: true
+        }
+    },
+    messages: {
+        pregunta: {
+            required: 'Ingrese una pregunta'
+        },
+        tipo_respuesta: {
+            required: 'Seleccione un tipo de respuesta'
+        }
+    },
+    submitHandler: function () {
+        $('div#result').html("<img src='../../assets/img/loading.gif' width='32px' height='32px'/>");
+        var rows = document.getElementById('respuestasTabla').getElementsByTagName('tr').length;
+        if(rows == 2)
+        {
+            alert("Debe de ingresar al menos una respuesta");
+        }
+        else
+        {
+            $.ajax({
+                //url:  $("form#formUsuarios").attr('action'),
+                type: $("form#preguntaDistribucionForm").attr('method'),
+                url: "/saivd/modulos/test-distribucion/crud.php?fun=c",
+                data: new FormData($("form#preguntaDistribucionForm")[0]),
+                processData: false,
+                contentType: false,
+                success: function (html) {
+                    $('div#result').css("display", "block");
+                    //$('div#result').fadeOut(10000).html(html);
+                    $('div#result').html(html);
+                }
+            });
+        }
+        return false;
     }
 });
-*/
+
+$('#preguntaDistribucionEditForm').validate({
+    rules: {
+        pregunta: {
+            required: true
+        },
+        tipo_respuesta: {
+            required: true
+        }
+    },
+    messages: {
+        pregunta: {
+            required: 'Ingrese una pregunta'
+        },
+        tipo_respuesta: {
+            required: 'Seleccione un tipo de respuesta'
+        }
+    },
+    submitHandler: function () {
+        $('div#result').html("<img src='../../assets/img/loading.gif' width='32px' height='32px'/>");
+        var rows = document.getElementById('respuestasTabla').getElementsByTagName('tr').length;
+        if(rows == 2)
+        {
+            alert("Debe de ingresar al menos una respuesta");
+        }
+        else
+        {
+            $.ajax({
+                //url:  $("form#formUsuarios").attr('action'),
+                type: $("form#preguntaDistribucionEditForm").attr('method'),
+                url: "/saivd/modulos/test-distribucion/crud.php?fun=u",
+                data: new FormData($("form#preguntaDistribucionEditForm")[0]),
+                processData: false,
+                contentType: false,
+                success: function (html) {
+                    $('div#result').css("display", "block");
+                    //$('div#result').fadeOut(10000).html(html);
+                    $('div#result').html(html);
+                }
+            });
+        }
+        return false;
+    }
+});
+
+$(".preguntaDistribucionEliminar").click(function() { 
+    if(confirm("¿Está realmente seguro de eliminar esta pregunta? Las respuestas de esta pregunta también serán eliminadas")) {
+        var nroFila = $(this).attr("data-fila");
+        $('div#result').html("<img src='../../assets/img/loading.gif' width='32px' height='32px'/>");
+        $.ajax({  
+            type: "POST",
+            url: "/saivd/modulos/test-distribucion/crud.php?fun=d",
+            data: { id: $(this).attr("data-id") },
+            success: function (respuesta) {
+                $("#fila" + nroFila).remove();
+                //$("div#result").fadeOut(10000).html(respuesta);
+                $("div#result").html(respuesta);
+            }
+        });
+    }
+
+    return false;
+});
+
+$('#preguntaFranquiciasForm').validate({
+    rules: {
+        pregunta: {
+            required: true
+        },
+        tipo_respuesta: {
+            required: true
+        }
+    },
+    messages: {
+        pregunta: {
+            required: 'Ingrese una pregunta'
+        },
+        tipo_respuesta: {
+            required: 'Seleccione un tipo de respuesta'
+        }
+    },
+    submitHandler: function () {
+        $('div#result').html("<img src='../../assets/img/loading.gif' width='32px' height='32px'/>");
+        var rows = document.getElementById('respuestasTabla').getElementsByTagName('tr').length;
+        if(rows == 2)
+        {
+            alert("Debe de ingresar al menos una respuesta");
+        }
+        else
+        {
+            $.ajax({
+                //url:  $("form#formUsuarios").attr('action'),
+                type: $("form#preguntaFranquiciasForm").attr('method'),
+                url: "/saivd/modulos/test-franquicias/crud.php?fun=c",
+                data: new FormData($("form#preguntaFranquiciasForm")[0]),
+                processData: false,
+                contentType: false,
+                success: function (html) {
+                    $('div#result').css("display", "block");
+                    //$('div#result').fadeOut(10000).html(html);
+                    $('div#result').html(html);
+                }
+            });
+        }
+        return false;
+    }
+});
+
+$('#preguntaFranquiciasEditForm').validate({
+    rules: {
+        pregunta: {
+            required: true
+        },
+        tipo_respuesta: {
+            required: true
+        }
+    },
+    messages: {
+        pregunta: {
+            required: 'Ingrese una pregunta'
+        },
+        tipo_respuesta: {
+            required: 'Seleccione un tipo de respuesta'
+        }
+    },
+    submitHandler: function () {
+        $('div#result').html("<img src='../../assets/img/loading.gif' width='32px' height='32px'/>");
+        var rows = document.getElementById('respuestasTabla').getElementsByTagName('tr').length;
+        if(rows == 2)
+        {
+            alert("Debe de ingresar al menos una respuesta");
+        }
+        else
+        {
+            $.ajax({
+                //url:  $("form#formUsuarios").attr('action'),
+                type: $("form#preguntaFranquiciasEditForm").attr('method'),
+                url: "/saivd/modulos/test-franquicias/crud.php?fun=u",
+                data: new FormData($("form#preguntaFranquiciasEditForm")[0]),
+                processData: false,
+                contentType: false,
+                success: function (html) {
+                    $('div#result').css("display", "block");
+                    //$('div#result').fadeOut(10000).html(html);
+                    $('div#result').html(html);
+                }
+            });
+        }
+        return false;
+    }
+});
+
+$(".preguntaFranquiciasEliminar").click(function() { 
+    if(confirm("¿Está realmente seguro de eliminar esta pregunta? Las respuestas de esta pregunta también serán eliminadas")) {
+        var nroFila = $(this).attr("data-fila");
+        $('div#result').html("<img src='../../assets/img/loading.gif' width='32px' height='32px'/>");
+        $.ajax({  
+            type: "POST",
+            url: "/saivd/modulos/test-franquicias/crud.php?fun=d",
+            data: { id: $(this).attr("data-id") },
+            success: function (respuesta) {
+                $("#fila" + nroFila).remove();
+                //$("div#result").fadeOut(10000).html(respuesta);
+                $("div#result").html(respuesta);
+            }
+        });
+    }
+
+    return false;
+});
+
+$('#preguntaMercadeoForm').validate({
+    rules: {
+        pregunta: {
+            required: true
+        },
+        tipo_respuesta: {
+            required: true
+        }
+    },
+    messages: {
+        pregunta: {
+            required: 'Ingrese una pregunta'
+        },
+        tipo_respuesta: {
+            required: 'Seleccione un tipo de respuesta'
+        }
+    },
+    submitHandler: function () {
+        $('div#result').html("<img src='../../assets/img/loading.gif' width='32px' height='32px'/>");
+        var rows = document.getElementById('respuestasTabla').getElementsByTagName('tr').length;
+        if(rows == 2)
+        {
+            alert("Debe de ingresar al menos una respuesta");
+        }
+        else
+        {
+            $.ajax({
+                //url:  $("form#formUsuarios").attr('action'),
+                type: $("form#preguntaMercadeoForm").attr('method'),
+                url: "/saivd/modulos/test-mercadeo/crud.php?fun=c",
+                data: new FormData($("form#preguntaMercadeoForm")[0]),
+                processData: false,
+                contentType: false,
+                success: function (html) {
+                    $('div#result').css("display", "block");
+                    //$('div#result').fadeOut(10000).html(html);
+                    $('div#result').html(html);
+                }
+            });
+        }
+        return false;
+    }
+});
+
+$('#preguntaMercadeoEditForm').validate({
+    rules: {
+        pregunta: {
+            required: true
+        },
+        tipo_respuesta: {
+            required: true
+        }
+    },
+    messages: {
+        pregunta: {
+            required: 'Ingrese una pregunta'
+        },
+        tipo_respuesta: {
+            required: 'Seleccione un tipo de respuesta'
+        }
+    },
+    submitHandler: function () {
+        $('div#result').html("<img src='../../assets/img/loading.gif' width='32px' height='32px'/>");
+        var rows = document.getElementById('respuestasTabla').getElementsByTagName('tr').length;
+        if(rows == 2)
+        {
+            alert("Debe de ingresar al menos una respuesta");
+        }
+        else
+        {
+            $.ajax({
+                //url:  $("form#formUsuarios").attr('action'),
+                type: $("form#preguntaMercadeoEditForm").attr('method'),
+                url: "/saivd/modulos/test-mercadeo/crud.php?fun=u",
+                data: new FormData($("form#preguntaMercadeoEditForm")[0]),
+                processData: false,
+                contentType: false,
+                success: function (html) {
+                    $('div#result').css("display", "block");
+                    //$('div#result').fadeOut(10000).html(html);
+                    $('div#result').html(html);
+                }
+            });
+        }
+        return false;
+    }
+});
+
+$(".preguntaMercadeoEliminar").click(function() { 
+    if(confirm("¿Está realmente seguro de eliminar esta pregunta? Las respuestas de esta pregunta también serán eliminadas")) {
+        var nroFila = $(this).attr("data-fila");
+        $('div#result').html("<img src='../../assets/img/loading.gif' width='32px' height='32px'/>");
+        $.ajax({  
+            type: "POST",
+            url: "/saivd/modulos/test-mercadeo/crud.php?fun=d",
+            data: { id: $(this).attr("data-id") },
+            success: function (respuesta) {
+                $("#fila" + nroFila).remove();
+                //$("div#result").fadeOut(10000).html(respuesta);
+                $("div#result").html(respuesta);
+            }
+        });
+    }
+
+    return false;
+});
+
+$(".consultaDistribucion").click(function (e) { 
+    e.preventDefault();
+    $.ajax({  
+        type: "POST",
+        url: "/saivd/modulos/distribucion/estadisticabd.php",
+        data: { id: $(this).attr("data-id") },
+        success: function (respuesta) {
+            $("#resultadosEstadisticas").empty();
+            $("#resultadosEstadisticas").html(respuesta);
+        }
+    });
+
+    return false;
+});
+$(".consultaVentas").click(function (e) { 
+    e.preventDefault();
+    $.ajax({  
+        type: "POST",
+        url: "/saivd/modulos/ventas/estadisticabd.php",
+        data: str,
+        success: function (respuesta) {
+            $("#resultadosEstadisticas").empty();
+            $("#resultadosEstadisticas").html(respuesta);
+        }
+    });
+
+    return false;
+});
+$(".consultaFranquicias").click(function (e) { 
+    e.preventDefault();
+    $.ajax({  
+        type: "POST",
+        url: "/saivd/modulos/franquicias/estadisticabd.php",
+        data: str,
+        success: function (respuesta) {
+            $("#resultadosEstadisticas").empty();
+            $("#resultadosEstadisticas").html(respuesta);
+        }
+    });
+
+    return false;
+});
+$(".consultaMercadeo").click(function (e) { 
+    e.preventDefault();
+    $.ajax({  
+        type: "POST",
+        url: "/saivd/modulos/mercadeo/estadisticabd.php",
+        data: str,
+        success: function (respuesta) {
+            $("#resultadosEstadisticas").empty();
+            $("#resultadosEstadisticas").html(respuesta);
+        }
+    });
+
+    return false;
+});

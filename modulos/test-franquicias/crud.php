@@ -54,9 +54,11 @@
                 . ")";
 
                 $queryGuardarRespuestas =  $conexion->query($stringGuardarRespuesta);
+                if(!$queryGuardarRespuestas)
+                    mensaje($conexion->error, 'alert-success');
             }
-
             mensaje('Pregunta y respuestas guardadas satisfacoriamente', 'alert-success');
+            
             limpiarFormulario();
         }
     }
