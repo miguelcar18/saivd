@@ -39,7 +39,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="page-header-inicio">
-                                <b>RESULTADOS <?= strtoupper($camposModulo['nombre']) ?> - MERCADEO</b>
+                                <b>RESULTADOS <?= strtoupper($camposModulo['nombre']) ?> - VENTAS</b>
                             </h3>
                         </div>
                     </div>

@@ -83,7 +83,7 @@
     {
         ?><script type="text/javascript">
 
-        $('form#preguntaVentasForm').each(function () {
+        $('form#preguntaFranquiciasForm').each(function () {
             this.reset();
         });
         $("#respuestasTabla tbody > tr").remove();

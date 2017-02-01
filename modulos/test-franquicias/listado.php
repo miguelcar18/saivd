@@ -90,7 +90,7 @@
                                                             <span class="btn btn-sm btn-warning"> <i class="fa fa-pencil"></i> </span> 
                                                         </a>
                                                         &nbsp;
-                                                        <a href="" data-id="<?= $row['idpregunta'] ?>"  class="preguntaVentasEliminar" data-fila="<?=$i?>" data-rel="tooltip" title="Eliminar <?= $row['contenidop'] ?>" objeto="<?= $row['idpregunta'] ?>"> 
+                                                        <a href="" data-id="<?= $row['idpregunta'] ?>"  class="preguntaFranquiciasEliminar" data-fila="<?=$i?>" data-rel="tooltip" title="Eliminar <?= $row['contenidop'] ?>" objeto="<?= $row['idpregunta'] ?>"> 
                                                             <span class="btn btn-sm btn-danger"> <i class="fa fa-trash"></i> </span> 
                                                         </a>
                                                     </td>

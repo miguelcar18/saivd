@@ -81,7 +81,7 @@
     {
         ?><script type="text/javascript">
 
-        $('form#preguntaVentasForm').each(function () {
+        $('form#preguntaDistribucionForm').each(function () {
             this.reset();
         });
         $("#respuestasTabla tbody > tr").remove();
