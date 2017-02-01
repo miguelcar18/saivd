@@ -37,6 +37,14 @@
                             </div>
                             <?php
                         }
+                        else if($consulta->num_rows < 10)
+                        {
+                            ?>
+                            <div class="col-md-12">
+                                <h4 class="text-center">Este módulo no contiene la cantidad mínima de preguntas registradas (10 preguntas)</h4>
+                            </div>
+                            <?php
+                        }
                         else
                         {
                     ?>

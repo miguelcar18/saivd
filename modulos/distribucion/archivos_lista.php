@@ -58,6 +58,8 @@
                             while($row = $archivos->fetch_array())
                             { 
                                 $separar = explode(".", $row['nombrel']);
+                                if(end($separar) == 'txt' || end($separar) == 'pdf' || end($separar) == 'mp4' || end($separar) == 'mov' || end($separar) == 'wmv' || end($separar) == 'jpg' || end($separar) == 'jpeg' || end($separar) == 'gif' || end($separar) == 'png' || end($separar) == 'svg')
+                                {
                                 ?>
                                 <div class="col-md-3">
                                     <div class="panel panel-primary text-center no-boder bg-color-green">
@@ -89,20 +91,14 @@
                                                 }
                                             ?>
                                         </div>
-                                        <?php
-                                            if(end($separar) == 'txt' || end($separar) == 'pdf' || end($separar) == 'mp4' || end($separar) == 'mov' || end($separar) == 'wmv' || end($separar) == 'jpg' || end($separar) == 'jpeg' || end($separar) == 'gif' || end($separar) == 'png' || end($separar) == 'svg')
-                                            {
-                                        ?>
                                         <div class="panel-footer back-footer-green">
                                             <a href="ver_archivo.php?id=<?= $row['idarchivo'] ?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
                                         </div>
-                                        <?php
-                                            }
-                                        ?>
                                     </div>
                                 </div>
                                 <?php 
                                 $contador++;
+                                }
                                 if($contador == 4)
                                 {
                                     ?>

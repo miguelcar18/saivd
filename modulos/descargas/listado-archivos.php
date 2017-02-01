@@ -4,12 +4,31 @@
     include("../../conexion/conexion-bd.php");
     include("../../conexion/funciones.php"); 
 
-    $nombreModulo = $conexion->query("SELECT nombre FROM modulos WHERE idmodulo = ".$_GET['id']."");
+    $nombreModulo = $conexion->query("SELECT nombre, fkdepartamento FROM modulos WHERE idmodulo = ".$_GET['id']."");
     $camposModulo = $nombreModulo->fetch_array();
 
     $archivos= $conexion->query("SELECT * FROM archivos WHERE fkmodulo = ".$_GET['id']."");
     if(!$archivos)
         echo $conexion->error;
+
+    $nombreDepartamento = "";
+
+    if($camposModulo['fkdepartamento'] == 1)
+    {
+        $nombreDepartamento = "ventas";
+    }
+    else if($camposModulo['fkdepartamento'] == 2)
+    {
+        $nombreDepartamento = "distribucion";
+    }
+    else if($camposModulo['fkdepartamento'] == 3)
+    {
+        $nombreDepartamento = "franquicias";
+    }
+    else if($camposModulo['fkdepartamento'] == 4)
+    {
+        $nombreDepartamento = "meracdeo";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -112,7 +131,7 @@
                                             ?>
                                         </div>
                                         <div class="panel-footer back-footer-green">
-                                             <a href="../../archivos/distribucion/<?= $camposModulo['nombre'].'/'.$row['nombrel']?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
+                                             <a href="../../archivos/<?= $nombreDepartamento.'/'.$camposModulo['nombre'].'/'.$row['nombrel']?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
                                         </div>
                                     </div>
                                 </div>

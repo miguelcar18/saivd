@@ -49,6 +49,14 @@
                             </div>
                             <?php
                         }
+                        else if($cantidad < 30)
+                        {
+                            ?>
+                            <div class="col-md-12">
+                                <h4 class="text-center">Este departamento no contiene la cantidad mínima de preguntas registradas (30 preguntas)</h4>
+                            </div>
+                            <?php
+                        }
                         else
                         {
                     ?>
