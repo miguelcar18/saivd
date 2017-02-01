@@ -83,7 +83,7 @@
                                                 <i class="fa fa-book fa-5x"></i>
                                             </div>
                                             <div class="panel-footer back-footer-red">
-                                                 <a href="archivos_lista.php?id=<?= $row['idmodulo']?>" style="color:white; font-weight: bold;"><?= $row['nombre'] ?></a>
+                                                 <a href="archivos_lista.php?id=<?= $row['idmodulo']?>" style="color:white; font-weight: bold;"><?= str_replace('_', ' ', $row['nombre']) ?></a>
                                             </div>
                                         </div>
                                     </div>

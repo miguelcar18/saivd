@@ -24,7 +24,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <?php include('../../template/head.php') ?>
-        <title>Archivos  <?= $camposModulo['nombre'] ?> - SAIVD</title>
+        <title>Archivos  <?= str_replace('_', ' ', $camposModulo['nombre']) ?> - SAIVD</title>
     </head>
     <body>
         <div id="wrapper">
@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h3 class="page-header-inicio">
-                                <b>ARCHIVOS  <?= strtoupper($camposModulo['nombre']) ?> - FRANQUICIAS</b>
+                                <b>ARCHIVOS  <?= str_replace('_', ' ', strtoupper($camposModulo['nombre'])) ?> - FRANQUICIAS</b>
                             </h3>
                         </div>
                     </div>

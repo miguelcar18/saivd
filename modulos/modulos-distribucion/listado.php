@@ -65,7 +65,7 @@
                                             {
                                                 ?>
                                                 <tr class="odd gradeX" id="fila<?=$i?>">
-                                                    <td><?= $row['nombre'] ?></td>
+                                                    <td><?= str_replace('_', ' ', $row['nombre']) ?></td>
                                                     <td><?= $row['nivel_mod'] ?></td>
                                                     <td>
                                                         <a href="../test-distribucion/listado.php?id=<?= $row['idmodulo'] ?>" class="tooltip-success preguntas" data-rel="tooltip" title="Preguntas <?= $row['nombre'] ?>" style="text-decoration:none;"> 

@@ -46,7 +46,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group col-md-9">
                                                 <label>Nombre</label>
-                                                <input class="form-control" type="text" name="nombre" id="nombre" value="<?= $campoModulo['nombre']?>" required>
+                                                <input class="form-control" type="text" name="nombre" id="nombre" value="<?= str_replace('_', ' ', $campoModulo['nombre'])?>" required>
                                                 <input class="form-control" type="hidden" name="nombreAnterior" id="nombreAnterior" value="<?= $campoModulo['nombre']?>" required>
                                             </div>
                                             <div class="form-group col-md-3">

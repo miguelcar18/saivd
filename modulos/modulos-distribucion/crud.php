@@ -12,12 +12,12 @@
     function guardar()
     {
         $conexion   = $GLOBALS["conexion"];
-        $nombre     = $_POST['nombre'];
+        $nombre     = quitar_tildes(str_replace(' ', '_', $_POST['nombre']));
         $nivel_mod  = $_POST['nivel_mod'];
         $archivos   = $_FILES['archivos'];
 
-        if(!is_dir("../../archivos/distribucion/".$_POST['nombre']."")) 
-            mkdir("../../archivos/distribucion/".$_POST['nombre']."", 0777);
+        if(!is_dir("../../archivos/distribucion/".$nombre."")) 
+            mkdir("../../archivos/distribucion/".$nombre."", 0777);
 
         $files = array();
         foreach ($archivos  as $k => $l) {
@@ -55,7 +55,7 @@
                 $tipo               = $file["type"];
                 $nombreA            = quitar_tildes(str_replace(' ', '_', $file["name"]));
                 $nombresArchivos[]  = $nombreA;
-                move_uploaded_file(@$file["tmp_name"], "../../archivos/distribucion/".$_POST['nombre']."/". $nombreA);
+                move_uploaded_file(@$file["tmp_name"], "../../archivos/distribucion/".$nombre."/". $nombreA);
 
                 sleep(5);
 
@@ -132,7 +132,7 @@
     function editar()
     {
         $conexion       = $GLOBALS["conexion"];
-        $nombre         = $_POST['nombre'];
+        $nombre         = quitar_tildes(str_replace(' ', '_', $_POST['nombre']));
         $nivel_mod      = $_POST['nivel_mod'];
         $idOriginal     = $_POST['id'];
         $nombreAnterior = $_POST['nombreAnterior'];
