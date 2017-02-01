@@ -67,16 +67,9 @@
             if((isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 1 && strpos($_SERVER["REQUEST_URI"], 'distribucion/') === false && strpos($_SERVER["REQUEST_URI"], 'franquicias/') === false && strpos($_SERVER["REQUEST_URI"], 'mercadeo/') === false) || (isset($_SESSION['rol']) && $_SESSION['rol'] == 1 && strpos($_SERVER["REQUEST_URI"], 'ventas/') !== false))
             {
                 ?>
-                <?php
-                    if(isset($_SESSION['rol']) && $_SESSION['rol'] != 1)
-                    {
-                ?>
-                    <li>
-                        <a href="<?= $ruta ?>modulos/ventas/index.php" <?php if($url_actual=='ventas/index.php')echo 'class="active-menu"'; ?>><i class="fa fa-university"></i> Ventas</a>
-                    </li>
-                <?php
-                    }
-                ?>
+                <li>
+                    <a href="<?= $ruta ?>modulos/ventas/index.php" <?php if($url_actual=='ventas/index.php')echo 'class="active-menu"'; ?>><i class="fa fa-university"></i> Ventas</a>
+                </li>
                 <li>
                     <a href="<?= $ruta ?>modulos/ventas/adiestramiento.php" <?php if($url_actual=='ventas/adiestramiento.php')echo 'class="active-menu"'; ?>><i class="fa fa-book"></i> Módulos de adiestramiento</a>
                 </li>
@@ -104,16 +97,9 @@
             if((isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 2 && strpos($_SERVER["REQUEST_URI"], 'ventas/') === false && strpos($_SERVER["REQUEST_URI"], 'franquicias/') === false && strpos($_SERVER["REQUEST_URI"], 'mercadeo/') === false) || (isset($_SESSION['rol']) && $_SESSION['rol'] == 1 && strpos($_SERVER["REQUEST_URI"], 'distribucion/') !== false))
             {
                 ?>
-                <?php
-                    if(isset($_SESSION['rol']) && $_SESSION['rol'] != 1)
-                    {
-                ?>
                 <li>
                     <a href="<?= $ruta ?>modulos/distribucion/index.php" <?php if($url_actual=='distribucion/index.php')echo 'class="active-menu"'; ?>><i class="fa fa-university"></i> Distribución</a>
                 </li>
-                <?php
-                    }
-                ?>
                 <li>
                     <a href="<?= $ruta ?>modulos/distribucion/adiestramiento.php" <?php if($url_actual=='distribucion/adiestramiento.php')echo 'class="active-menu"'; ?>><i class="fa fa-book"></i> Módulos de adiestramiento</a>
                 </li>
@@ -141,16 +127,9 @@
             if((isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 3 && strpos($_SERVER["REQUEST_URI"], 'ventas/') === false && strpos($_SERVER["REQUEST_URI"], 'distribucion/') === false && strpos($_SERVER["REQUEST_URI"], 'mercadeo/') === false) || (isset($_SESSION['rol']) && $_SESSION['rol'] == 1 && strpos($_SERVER["REQUEST_URI"], 'franquicias/') !== false))
             {
                 ?>
-                <?php
-                    if(isset($_SESSION['rol']) && $_SESSION['rol'] != 1)
-                    {
-                ?>
                 <li>
                     <a href="<?= $ruta ?>modulos/franquicias/index.php" <?php if($url_actual=='franquicias/index.php')echo 'class="active-menu"'; ?>><i class="fa fa-university"></i> Franquicias</a>
                 </li>
-                <?php
-                    }
-                ?>
                 <li>
                     <a href="<?= $ruta ?>modulos/franquicias/adiestramiento.php" <?php if($url_actual=='franquicias/adiestramiento.php')echo 'class="active-menu"'; ?>><i class="fa fa-book"></i> Módulos de adiestramiento</a>
                 </li>
@@ -179,16 +158,9 @@
             if((isset($_SESSION['fkdepartamento']) && $_SESSION['fkdepartamento'] == 4 && strpos($_SERVER["REQUEST_URI"], 'ventas/') === false && strpos($_SERVER["REQUEST_URI"], 'distribucion/') === false && strpos($_SERVER["REQUEST_URI"], 'franquicias/') === false) || (isset($_SESSION['rol']) && $_SESSION['rol'] == 1 && strpos($_SERVER["REQUEST_URI"], 'mercadeo/') !== false))
             {
                 ?>
-                <?php
-                    if(isset($_SESSION['rol']) && $_SESSION['rol'] != 1)
-                    {
-                ?>
                 <li>
                     <a href="<?= $ruta ?>modulos/mercadeo/index.php" <?php if($url_actual=='mercadeo/index.php')echo 'class="active-menu"'; ?>><i class="fa fa-university"></i> Mercadeo</a>
                 </li>
-                <?php
-                    }
-                ?>
                 <li>
                     <a href="<?= $ruta ?>modulos/mercadeo/adiestramiento.php" <?php if($url_actual=='mercadeo/adiestramiento.php')echo 'class="active-menu"'; ?>><i class="fa fa-book"></i> Módulos de adiestramiento</a>
                 </li>

@@ -140,6 +140,14 @@
                                                     <option value="Upata">Upata</option>
                                                 </select>
                                             </div>
+                                            <div class="form-group col-md-4">
+                                                <label> Estado </label>
+                                                <select class="form-control" name="estado" id="estado" required>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1">Habilitado</option>
+                                                    <option value="0">Inhabilitado</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="row">

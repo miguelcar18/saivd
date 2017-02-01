@@ -13,7 +13,7 @@
     include("../../conexion/funciones.php"); 
 
     $adiestramientos= $conexion->query("SELECT * FROM modulos WHERE fkdepartamento = 1 ORDER BY nivel_mod");
-    $adiestramiendos= $conexion->query("SELECT * FROM modulos WHERE fkdepartamento = 2 ORDER BY nivel_mod");
+    $adiestramiendos= $conexion->query("SELECT * FROM modulos WHERE fkdepartamento = 1 ORDER BY nivel_mod");
     if(!$adiestramientos)
         echo $conexion->error;
     if(!$adiestramiendos)
@@ -87,7 +87,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <?php 
+                                    <?php
                                     $contador++;
                                     if($contador == 4)
                                     {

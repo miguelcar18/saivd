@@ -83,6 +83,9 @@ $('#usuarioForm').validate({
         },
         rol: {
             required: true,
+        },
+        estado: {
+            required: true,
         }
     },
     messages: {
@@ -119,6 +122,9 @@ $('#usuarioForm').validate({
         },
         rol: {
             required: 'Seleccione un rol de usuario',
+        },
+        estado: {
+            required: 'Seleccione un estado',
         },
     },
     submitHandler: function () {
@@ -166,6 +172,9 @@ $('#usuarioEditForm').validate({
         },
         rol: {
             required: true,
+        },
+        estado: {
+            required: true,
         }
     },
     messages: {
@@ -195,6 +204,9 @@ $('#usuarioEditForm').validate({
         },
         rol: {
             required: 'Seleccione un rol de usuario',
+        },
+        estado: {
+            required: 'Seleccione un estado',
         },
     },
     submitHandler: function () {

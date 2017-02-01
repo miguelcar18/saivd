@@ -21,6 +21,7 @@
         $password       = md5($_POST['password']);
         $rol            = $_POST['rol'];
         $agencia        = $_POST['agencia'];
+        $estado         = $_POST['estado'];
 
         $stringGuardar = "insert into usuarios ("
             . "nombre, "
@@ -32,7 +33,8 @@
             . "usuario, "
             . "password, "
             . "rol, "
-            . "agencia"
+            . "agencia, "
+            . "estado"
             . ") values ("
             . "'".$nombre."', "
             . "'".$apellido."', "
@@ -43,7 +45,8 @@
             . "'".$usuario."', "
             . "'".$password."', "
             . "'".$rol."' , "
-            . "'".$agencia."' "
+            . "'".$agencia."', "
+            . "'".$estado."' "
             . ")";
 
         //Comprobar que no este duplicado
@@ -127,6 +130,7 @@
         $usuario        = $_POST['usuario'];
         $rol            = $_POST['rol'];
         $agencia        = $_POST['agencia'];
+        $estado         = $_POST['estado'];
         $idOriginal     = $_POST['id'];
 
         $stringEditar = "UPDATE usuarios SET "
@@ -138,7 +142,8 @@
             . "correo= '".$correo."', "
             . "usuario= '".$usuario."', "
             . "rol= '".$rol."', "
-            . "agencia= '".$agencia."' "
+            . "agencia= '".$agencia."', "
+            . "estado= '".$estado."' "
             . "WHERE idusuario=".$idOriginal;
 
         //Comprobar que no este duplicado

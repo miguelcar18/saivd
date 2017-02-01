@@ -29,7 +29,7 @@
         $_SESSION['fkdepartamento'] = $campoUsuario ['fkdepartamento'];
         $_SESSION['rol']            = $campoUsuario ['rol'];
 
-        if($campoUsuario ['fkdepartamento'] == $_POST['dpto'] || $campoUsuario ['rol'] == 1)
+        if(($campoUsuario ['fkdepartamento'] == $_POST['dpto'] || $campoUsuario ['rol'] == 1) && $campoUsuario ['estado'] == 1)
         {
             $consulta_departamento = $conexion->query("
                 SELECT 
@@ -47,6 +47,10 @@
             </script>
 
             <?php
+        }
+        else if($campoUsuario ['estado'] == 0)
+        {
+            echo "<div class=\"alert alert-danger\" role=\"alert\" style=\"text-align:left\"><i class=\"fa fa-ban\"></i> <b>Error: </b> Este usuario se encuentra inhabilitado.</div>";
         }
         else 
         {

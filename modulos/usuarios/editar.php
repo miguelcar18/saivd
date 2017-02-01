@@ -69,7 +69,14 @@
                                         <div class="col-md-12">
                                             <div class="form-group col-md-4">
                                                 <label>Cargo</label>
-                                                <input class="form-control" type="text" name="cargo" id="cargo" value="<?= $campoUsuario['cargo']?>" required>
+                                                <select class="form-control" name="cargo" id="cargo" required>
+                                                    <option value="" <?php if($campoUsuario['cargo'] == "") { ?> selected <?php } ?>>Seleccione</option>
+                                                    <option value="1" <?php if($campoUsuario['cargo'] == "1") { ?> selected <?php } ?>>Gerente</option>
+                                                    <option value="2" <?php if($campoUsuario['cargo'] == "2") { ?> selected <?php } ?>>Coordinador</option>
+                                                    <option value="3" <?php if($campoUsuario['cargo'] == "3") { ?> selected <?php } ?>>Analista</option>
+                                                    <option value="0" <?php if($campoUsuario['cargo'] == "0") { ?> selected <?php } ?>>Franquiciado</option>
+                                                    <option value="4" <?php if($campoUsuario['cargo'] == "4") { ?> selected <?php } ?>>Supervisor</option>
+                                                </select>
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label>Departamento</label>
@@ -122,6 +129,18 @@
                                                     <option value="San Félix" <?php if($campoUsuario['agencia'] == "San Félix") { ?> selected <?php } ?>>San Félix</option>
                                                     <option value="Tumeremo" <?php if($campoUsuario['agencia'] == "Tumeremo") { ?> selected <?php } ?>>Tumeremo</option>
                                                     <option value="Upata" <?php if($campoUsuario['agencia'] == "Upata") { ?> selected <?php } ?>>Upata</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group col-md-4">
+                                                <label> Estado </label>
+                                                <select class="form-control" name="estado" id="estado" required>
+                                                    <option value="">Seleccione</option>
+                                                    <option value="1" <?php if($campoUsuario['estado'] == "1") { ?> selected <?php } ?>>Habilitado</option>
+                                                    <option value="0" <?php if($campoUsuario['estado'] == "0") { ?> selected <?php } ?>>Inhabilitado</option>
                                                 </select>
                                             </div>
                                         </div>

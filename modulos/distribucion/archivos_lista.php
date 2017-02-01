@@ -69,24 +69,6 @@
                                                 <i class="fa fa-file-text-o fa-5x"></i>
                                                 <?php
                                                 }
-                                                else if(end($separar) == 'doc' || end($separar) == 'docx')
-                                                {
-                                                ?>
-                                                <i class="fa fa-file-word-o fa-5x"></i>
-                                                <?php
-                                                }
-                                                else if(end($separar) == 'xls' || end($separar) == 'xlsx')
-                                                {
-                                                ?>
-                                                <i class="fa fa-file-excel-o fa-5x"></i>
-                                                <?php
-                                                }
-                                                else if(end($separar) == 'ppt' || end($separar) == 'pptx')
-                                                {
-                                                ?>
-                                                <i class="fa fa-file-powerpoint-o fa-5x"></i>
-                                                <?php
-                                                }
                                                 else if(end($separar) == 'pdf')
                                                 {
                                                 ?>
@@ -99,29 +81,24 @@
                                                 <i class="fa fa-file-movie-o fa-5x"></i>
                                                 <?php
                                                 }
-                                                else if(end($separar) == 'zip' || end($separar) == 'rar')
-                                                {
-                                                ?>
-                                                <i class="fa fa-file-zip-o fa-5x"></i>
-                                                <?php
-                                                }
                                                 else if(end($separar) == 'jpg' || end($separar) == 'jpeg' || end($separar) == 'gif' || end($separar) == 'png' || end($separar) == 'svg')
                                                 {
                                                 ?>
                                                 <i class="fa fa-file-picture-o fa-5x"></i>
                                                 <?php
                                                 }
-                                                else
-                                                {
-                                                ?>
-                                                <i class="fa fa-file-archive-o fa-5x"></i>
-                                                <?php
-                                                }
                                             ?>
                                         </div>
+                                        <?php
+                                            if(end($separar) == 'txt' || end($separar) == 'pdf' || end($separar) == 'mp4' || end($separar) == 'mov' || end($separar) == 'wmv' || end($separar) == 'jpg' || end($separar) == 'jpeg' || end($separar) == 'gif' || end($separar) == 'png' || end($separar) == 'svg')
+                                            {
+                                        ?>
                                         <div class="panel-footer back-footer-green">
-                                             <a href="ver_archivo.php?id=<?= $row['idarchivo'] ?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
+                                            <a href="ver_archivo.php?id=<?= $row['idarchivo'] ?>" style="color:white; font-weight: bold;"><?= $row['nombrel'] ?></a>
                                         </div>
+                                        <?php
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                                 <?php 

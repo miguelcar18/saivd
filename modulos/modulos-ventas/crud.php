@@ -53,7 +53,7 @@
             $nombresArchivos = array();
             foreach ($files as $file) {
                 $tipo               = $file["type"];
-                $nombreA            = quitar_tildes(str_replace(' ','_',$file["name"]));
+                $nombreA            = quitar_tildes(str_replace(' ', '_', $file["name"]));
                 $nombresArchivos[]  = $nombreA;
                 move_uploaded_file(@$file["tmp_name"], "../../archivos/ventas/".$_POST['nombre']."/". $nombreA);
 
@@ -135,6 +135,7 @@
         $nombre         = $_POST['nombre'];
         $nivel_mod      = $_POST['nivel_mod'];
         $idOriginal     = $_POST['id'];
+        $nombreAnterior = $_POST['nombreAnterior'];
         //$archivos   = $_FILES['archivos'];
 
         $stringEditar = "UPDATE modulos SET "
@@ -152,6 +153,7 @@
         else
         {
             $queryGuardar =  $conexion->query($stringEditar);
+            rename('../../archivos/ventas/'.$nombreAnterior,'../../archivos/ventas/'.$nombre);
             mensaje('Módulo actualizado satisfacoriamente', 'alert-success');
             limpiarFormulario();
         }    
